@@ -1,0 +1,32 @@
+img {
+    width: 200px; // Ajusta el ancho como desees
+    height: auto; // Mantiene la proporción del icono
+    display: block;
+    margin: auto; // Centra el icono horizontalmente
+    margin-top: 50px; // Ajusta la altura desde la parte superior como desees
+    margin-bottom: 40px;
+  }
+
+  .icono-centrado {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+  }
+  
+  .container {
+    padding: 0 40px; // Ajusta el padding a tu gusto
+  }
+  
+  .input-estilo {
+    --padding-start: 10px;
+    --padding-end: 10px;
+    --padding-bottom : 10px
+  }
+  
+  .boton-estilo {
+    --padding-top: 10px;
+    --padding-bottom: 10px;
+    margin-top: 20px;
+  }
+  

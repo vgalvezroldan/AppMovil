@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="volver()">
+        <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+        Volver
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <img src="assets/icon/undraw_my_password_re_ydq7.svg" alt="Mi Icono" class="icono-centrado">
+
+  <div class="container">
+    <ion-item>
+      <ion-label position="stacked">Nombre de Usuario</ion-label>
+      <ion-input class="input-estilo" [(ngModel)]="username" type="text" placeholder="Ingresa tu nombre de usuario"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Contraseña</ion-label>
+      <ion-input class="input-estilo" [(ngModel)]="password" [type]="showPassword ? 'text' : 'password'" placeholder="Ingresa tu contraseña"></ion-input>
+      <ion-button slot="end" fill="clear" (click)="togglePasswordVisibility()">
+        <ion-icon [name]="showPassword ? 'eye-off' : 'eye'"></ion-icon>
+      </ion-button>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Confirmar Contraseña</ion-label>
+      <ion-input class="input-estilo" [(ngModel)]="confirmPassword" [type]="showConfirmPassword ? 'text' : 'password'" placeholder="Confirma tu contraseña"></ion-input>
+      <ion-button slot="end" fill="clear" (click)="toggleConfirmPasswordVisibility()">
+        <ion-icon [name]="showConfirmPassword ? 'eye-off' : 'eye'"></ion-icon>
+      </ion-button>
+    </ion-item>
+
+    <ion-button class="boton-estilo" expand="block" (click)="onRegister()">Registrar</ion-button>
+  </div>
+</ion-content>
+

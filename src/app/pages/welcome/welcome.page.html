@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Bienvenido</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngIf="currentUser; else noUser">
+    <p>Bienvenido, {{ currentUser }}!</p>
+
+    <!-- Verificar si weatherData contiene datos antes de intentar acceder a sus propiedades -->
+    <div *ngIf="weatherData">
+      <p>Ubicación: {{ weatherData.title }}</p>
+      <p>Temperatura: {{ weatherData.consolidated_weather[0].the_temp }} °C</p>
+      <p>Descripción: {{ weatherData.consolidated_weather[0].weather_state_name }}</p>
+      
+      <!-- Asegurándonos de que cada imagen tiene una URL válida y que la etiqueta está bien formada -->
+      <div *ngFor="let item of weatherData.consolidated_weather">
+        <img [src]="'https://www.metaweather.com/static/img/weather/png/' + item.weather_state_abbr + '.png'" alt="weather-icon" />
+        <p>{{ item.applicable_date }} - {{ item.weather_state_name }}</p>
+      </div>
+    </div>
+  </div>
+
+  <ng-template #noUser>
+    <p>No hay usuario logueado.</p>
+  </ng-template>
+  
+  <!-- Botón para volver -->
+  <ion-button (click)="volver()">Volver</ion-button>
+</ion-content>
+
+
+
+
+
