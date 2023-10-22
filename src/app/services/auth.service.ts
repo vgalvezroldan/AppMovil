@@ -33,16 +33,10 @@ export class AuthService {
     return this.currentUser;
   }
 
-  // Método para cerrar sesión del usuario
-  logout(): void {
-    this.isUserLoggedIn = false;
-    this.currentUser = null; // Limpiando el estado del usuario actual
-  }
-
   isLoggedIn(): boolean {
     return this.isUserLoggedIn;
   }
-
+  // Método para cambiar contraseña
   changePassword(username: string, newPassword: string): boolean {
     const userIndex = this.users.findIndex(user => user.username === username);
     if (userIndex !== -1) {

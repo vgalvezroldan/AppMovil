@@ -15,7 +15,6 @@ export class LoginPage {
 
   constructor(private authService: AuthService, private navCtrl: NavController, private alertController: AlertController) { }
 
-  // En login.page.ts
 async onLogin() {
   // Verifica si los campos no están vacíos
   if (this.username.trim() === '' || this.password.trim() === '') {
@@ -27,7 +26,7 @@ async onLogin() {
     console.log('Login exitoso!');
     this.navCtrl.navigateForward('/welcome');
   } else {
-    // Aquí usamos el AlertController para mostrar un mensaje de error
+    //  AlertController para mostrar un mensaje de error
     this.presentAlert('Error', 'Nombre de usuario o contraseña incorrectos.');
   }
 }
@@ -43,7 +42,7 @@ async presentAlert(title: string, message: string) {
   await alert.present();
 }
 
-
+  
   togglePasswordVisibility() {
     this.showPassword = !this.showPassword;
   }

@@ -32,7 +32,7 @@ export class ForgottenPage {
       return;
     }
   
-    // Intenta cambiar la contraseña
+    // Alerta cambio de contraseña exitoso
     const result = this.authService.changePassword(this.username, this.newPassword);
     if (result) {
       const alert = await this.alertController.create({

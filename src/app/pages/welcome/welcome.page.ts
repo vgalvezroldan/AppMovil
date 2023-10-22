@@ -11,7 +11,6 @@ import { NavController } from '@ionic/angular';
 })
 export class WelcomePage implements OnInit {
 
-  weatherData: any; // Propiedad para almacenar los datos del clima
   currentUser: string | null = null; // Propiedad para almacenar el nombre del usuario
 
   constructor(private authService: AuthService, private navCtrl : NavController) { }
@@ -23,6 +22,8 @@ export class WelcomePage implements OnInit {
   volver = () => {
     this.navCtrl.navigateBack('/login');
 }
+
+
 }
 
 
